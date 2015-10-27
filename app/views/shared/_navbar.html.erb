@@ -24,7 +24,7 @@
       <hr>
       <div class="navbar-octopus-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-octopus-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-octopus-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-octopus-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -46,6 +46,7 @@
       </div>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-octopus-item navbar-octopus-link" %>
+       <%# link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook' ), class: "navbar-octopus-item navbar-octopus-link" %>
     <% end %>
     <hr>
     <%= link_to t(".top_call_to_action", default: "Post stuff"), "/mainpage", class: "navbar-octopus-item navbar-octopus-button btn" %>

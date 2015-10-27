@@ -1,7 +1,7 @@
 <nav class="navbar-octopus">
   <div class="container navbar-octopus-container">
 
-    <%= link_to "/mainpage" do %>
+    <%= link_to "/" do %>
       <%= image_tag "http://www.hostinsight.com/assets/layout/octopus.png", class: "navbar-octopus-logo" %>
     <% end %>
 
@@ -48,6 +48,6 @@
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-octopus-item navbar-octopus-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-octopus-item navbar-octopus-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Post stuff"), "/mainpage", class: "navbar-octopus-item navbar-octopus-button btn" %>
   </div>
 </nav>

@@ -14,7 +14,7 @@ class GalleriesController < ApplicationController
 
   # GET /galleries/new
   def new
-    @gallery = Gallery.new
+    @gallery = current_user.galleries.build
   end
 
   # GET /galleries/1/edit
@@ -24,7 +24,7 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
-    @gallery = Gallery.new(gallery_params)
+    @gallery = current_user.galleries.build(gallery_params)
 
       if @gallery.save
         GalleryMailer.creation_confirmation(@gallery).deliver_now

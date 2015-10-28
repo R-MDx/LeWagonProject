@@ -8,6 +8,7 @@ gem 'rails', '4.2.3'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
+#gem 'letter_opener', group: :development
 
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
@@ -18,6 +19,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 group :development, :test do
+  gem 'letter_opener'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'quiet_assets'

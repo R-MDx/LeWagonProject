@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,3 +13,19 @@
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>
+
+<h1><%= @gallery.name %></h1>
+<h2>
+  <%= pluralize @gallery.reviews.size, "review" %>
+</h2>
+
+<div id="reviews">
+  <% if @gallery.reviews.blank? %>
+    Be the first to leave a review for <%= @gallery.name %>
+  <% else %>
+    <% @gallery.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+

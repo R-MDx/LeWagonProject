@@ -11,7 +11,9 @@ class GalleriesController < ApplicationController
   # GET /galleries/1.json
   def show
     @gallery = Gallery.find(params[:id])
+    @review = Review.new  # <-- You need this now.
   end
+
 
   # GET /galleries/new
   def new

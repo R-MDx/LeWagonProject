@@ -19,12 +19,14 @@
   <%= pluralize @gallery.reviews.size, "review" %>
 </h2>
 
+
 <div id="reviews">
   <% if @gallery.reviews.blank? %>
     Be the first to leave a review for <%= @gallery.name %>
   <% else %>
     <% @gallery.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
+    <%= render 'reviews/form', gallery: @gallery, review: @review %>
+     <!--  <%= render 'reviews/show', review: review %> -->
     <% end %>
   <% end %>
 </div>

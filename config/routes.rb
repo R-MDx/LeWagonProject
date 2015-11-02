@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :galleries
+
+  resources :galleries, only: [ :index, :show ] do
+    resources :reviews, only: :create
+  end
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'pages#home'
   get 'mainpage' => 'pages#mainpage'
